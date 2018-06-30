@@ -2,26 +2,34 @@ import React,{ Component } from 'react';
 import { ScrollView, View, StyleSheet } from 'react-native';
 
 import BandItem from "./src/components/BandItem/BandItem";
+import Cabecera from "./src/components/Cabecera/Cabecera";
 
 export default class App extends React.Component {
+  
+  rangoFrecuencias = [
+    {f0:'50',f1:'63',f2:'80'},
+    {f0:'100',f1:'125',f2:'60'},
+    {f0:'200',f1:'250',f2:'315'},
+    {f0:'400',f1:'500',f2:'630'},
+    {f0:'800',f1:'1000',f2:'1250'},
+    {f0:'1600',f1:'2000',f2:'2500'},
+    {f0:'3150',f1:'4000',f2:'5000'},
+    {f0:'6300',f1:'8000',f2:'10000'}
+  ];
+
+  
+  listaOut = this.rangoFrecuencias.map((banda,i) =>(
+      <BandItem key={i} f0={banda.f0} f1={banda.f1} f2={banda.f2} />
+    ));
 
   render() {
     return (
-      
-        <ScrollView style={{flex:1,}}>
-          <View style={styles.container}>
-            <BandItem key={0} f0={'50'} f1={'63'} f2={'80'} />
-            <BandItem key={1} f0={'100'} f1={'125'} f2={'160'} />
-            <BandItem key={2} f0={'200'} f1={'125'} f2={'160'} />
-            <BandItem key={3} f0={'300'} f1={'125'} f2={'160'} />
-            <BandItem key={4} f0={'400'} f1={'125'} f2={'160'} />
-            <BandItem key={5} f0={'500'} f1={'125'} f2={'160'} />
-            <BandItem key={6} f0={'600'} f1={'125'} f2={'160'} />
-            <BandItem key={7} f0={'700'} f1={'125'} f2={'160'} />  
-          </View>
-        </ScrollView>
-      
-
+      <ScrollView style={{flex:1,}}>
+        <Cabecera/>
+        <View style={styles.container}>
+          {this.listaOut}
+        </View>
+      </ScrollView>
     );
   }
 }
