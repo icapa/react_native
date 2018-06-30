@@ -27,7 +27,9 @@ class BandItem extends Component{
 
     render(){ 
         return (
-        <View style={styles.bigContainer}>
+            
+        <View>
+            <View style={styles.columnas}>
             <View style={styles.container}>
                 <TextInput 
                     keyboardType='numeric'
@@ -68,44 +70,53 @@ class BandItem extends Component{
             <View style={styles.container}>
                 <TextInput 
                     keyboardType='numeric'
-                    style = {styles.celdas}
+                    style = {styles.celdaSola}
                     value={this.calculaResultado()} 
                 />
             </View>
+            </View>
         </View>
+        
         );
     }
 }
 
 const styles = StyleSheet.create({
+    columnas:{
+        padding: 5,
+        width:'100%',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
     container: {
       flex: 1,
-      //height:  "15%",
-      padding: 0,
-      backgroundColor: '#fff',
+      //width:"100%",
+      //padding: 0,
+      flex:1,
+      backgroundColor: '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',
-      flexDirection:'column'
-    },
-    bigContainer:{
-      //flex: 1,
-      height:"20%",
-      width:"100%",
-      padding: 0,
-      backgroundColor: '#ff0000',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      flexDirection:'row'
+      flexDirection:'column',
+      borderWidth: 1.5,
+      borderColor: '#000088'
     },
     celdas: {
-      flex: 1,
+      //height:45,
       width: "100%",
-      backgroundColor: '#fff',
-      justifyContent: 'center',
-      //width: 300, 
       borderColor:"black",
-      borderWidth: 1
-      
+      borderWidth: 1,
+      fontSize: 20,
+      textAlign: 'center'
+    },
+    celdaSola:{
+        flex:1,
+        width:'100%',
+        borderColor:'#000077',
+        borderWidth: 1,
+        fontSize: 25,
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 });
 
