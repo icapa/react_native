@@ -8,7 +8,7 @@ export default class App extends React.Component {
   
   rangoFrecuencias = [
     {f0:'50',f1:'63',f2:'80'},
-    {f0:'100',f1:'125',f2:'60'},
+    {f0:'100',f1:'125',f2:'160'},
     {f0:'200',f1:'250',f2:'315'},
     {f0:'400',f1:'500',f2:'630'},
     {f0:'800',f1:'1000',f2:'1250'},
